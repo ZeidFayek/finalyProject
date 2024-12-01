@@ -1,0 +1,396 @@
+
+$brand-color: #1fa84f;
+$body-bg: #f8f6f4;
+$secendaryColor: #5e5e5e;
+$boxColor: #eff0ef;
+$primaryColor: #404742;
+$title-2-color: #292836;
+
+a {
+text-decoration: none;
+}
+.title {
+color: $primaryColor;
+font-size: 45px;
+font-weight: bold;
+position: relative;
+text-transform: capitalize;
+}
+.title-2 {
+color: $title-2-color;
+font-size: 26px;
+font-weight: bold;
+position: relative;
+text-transform: capitalize;
+}
+p {
+font-size: 16px;
+line-height: 32px;
+font-weight: 400;
+color: $secendaryColor;
+}
+ul li {
+list-style: none;
+}
+.btnSumbit {
+border: 1px solid $brand-color;
+background: $brand-color;
+color: $body-bg;
+font-weight: 800;
+border-radius: 40px;
+padding: 8px 25px;
+font-size: 20px;
+position: relative;
+overflow: hidden;
+display: inline-flex;
+justify-content: center;
+text-transform: capitalize;
+align-items: center;
+text-align: center;
+letter-spacing: 0.5px;
+outline: none;
+font-weight: bold;
+transition: 0.8s all ease;
+cursor: pointer;
+z-index: 1;
+}
+.btnSumbit::before {
+background: $boxColor;
+content: "";
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: -1;
+transition: all 0.6s ease;
+width: 100%;
+height: 0%;
+transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.btnSumbit:hover::before {
+height: 380%;
+}
+.btnSumbit:hover {
+color: $secendaryColor;
+}
+.alert {
+--bs-alert-padding-y: 5px;
+margin-top: 8px;
+}
+// Start Nav ---------------------------------
+.navbar {
+background-color: $body-bg !important;
+box-shadow: 5px 5px 15px 0 rgb(31 31 31 / 7%);
+z-index: 99999;
+
+&-light {
+  .navbar-nav {
+    .nav-link {
+      color: $secendaryColor;
+      font-size: 17px;
+      font-weight: 600;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+      &:hover,
+      &:focus {
+        color: $brand-color !important;
+      }
+      &.active,
+      &.show > & {
+        color: $brand-color !important;
+      }
+    }
+  }
+}
+.nav-icon {
+  color: #000;
+  transition: color 0.3s;
+  &:hover {
+    color: $brand-color;
+  }
+}
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+.fa-bars {
+  color: #000;
+  transition: color 0.5s;
+  &:hover {
+    color: $brand-color;
+  }
+}
+}
+// End Nav ---------------------------------
+
+.homePage {
+background-color: $body-bg;
+padding-top: 100px;
+font-family: "Outfit", sans-serif;
+}
+.hero {
+height: calc(100vh - 80px);
+.uniqueWord {
+  color: $brand-color;
+}
+h2 {
+  line-height: 65px;
+  font-size: 52px;
+  font-weight: bold;
+}
+img {
+  width: 85%;
+  height: auto;
+  animation: mover 2.5s infinite alternate;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+}
+@media (max-width: 990px) {
+.hero {
+  margin-bottom: 160px;
+  img {
+    width: 70%;
+  }
+}
+}
+
+@media (max-width: 768px) {
+.hero-text {
+  text-align: center;
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+}
+/*******Start About**********/
+.about {
+// margin-bottom: 5px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 20px;
+.hover_img {
+  width: 80%;
+  border-radius: 14px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.img1 {
+  height: auto;
+  flex: 1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+}
+@media (max-width: 990px) {
+.about {
+  margin-top: 140px;
+}
+}
+@media (max-width: 768px) {
+.reviewsText {
+  text-align: center;
+}
+
+.about .hover_img img {
+  width: 85%;
+}
+
+.about .btnSumbit {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+}
+
+/*******End About**********/
+/*******End Team**********/
+.team {
+text-align: center;
+.team-img {
+  border-color: #fff;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.09);
+  filter: grayscale(100%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    filter: grayscale(0%);
+  }
+  img {
+    transition: all 0.2s ease-in-out;
+  }
+  img:hover {
+    transform: scale(1.05);
+    // opacity: 0.7;
+  }
+  &:hover .team-content-details {
+    bottom: 0;
+  }
+}
+.team-content-details {
+  position: absolute;
+  bottom: -120px;
+  transition: all 0.3s ease-in-out;
+  background-color: $boxColor;
+  left: 0;
+  right: 0;
+
+  h4 {
+    font-weight: 600;
+  }
+  h6 {
+    color: $brand-color;
+  }
+  i {
+    color: $brand-color;
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+    &:hover {
+      background-color: $brand-color;
+      color: $body-bg;
+    }
+  }
+}
+}
+
+/*******End Team**********/
+/***********Start Rewiews**************/
+.reviews {
+width: 80%;
+margin: auto;
+.review-content {
+  background-color: $boxColor;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s;
+  P {
+    padding-top: 8px;
+  }
+  h2 {
+    font-style: normal;
+    line-height: 1.2;
+    font-weight: 700;
+    transition: 0.5s;
+    font-size: 20px;
+    color: #232323;
+    margin-top: 10px;
+  }
+  h6 {
+    font-weight: bold;
+    color: $brand-color;
+  }
+}
+.review-content:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+}
+
+/*************End Reviews*******************/
+
+/************* Contact ******************/
+.contact {
+h6 {
+  color: $brand-color;
+  font-weight: bold;
+}
+h2 {
+  font-weight: bold;
+}
+i {
+  color: $brand-color;
+  font-size: 28px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: $secendaryColor;
+}
+form {
+  input,
+  textarea {
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: $boxColor;
+    color: $title-2-color;
+  }
+}
+}
+/*End Section Contact*/
+/*////////////////////////////////////////////////////*/
+/*Start Section Footer*/
+footer {
+background-color: #1c1d1c;
+padding: 20px;
+h4 {
+  color: #b6b6b6;
+}
+.footerContact {
+  background-color: #202020;
+  border-radius: 5px;
+  padding: 10px;
+  p {
+    color: #a2a1a1;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+}
+ul li {
+  a {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #ddd;
+  }
+  .fa-brands {
+    background-color: $brand-color;
+    border-radius: 10px;
+    color: $boxColor;
+    padding: 10px;
+    transition: all 0.3s;
+  }
+  .fa-brands:hover {
+    background-color: $body-bg;
+    color: #000;
+  }
+}
+.CopyRight {
+  h6 {
+    color: $secendaryColor;
+  }
+}
+.uniqueWord {
+  color: $boxColor;
+}
+hr {
+  color: $boxColor;
+}
+}
+/*End Section Footer*/
